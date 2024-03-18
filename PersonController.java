@@ -51,13 +51,13 @@ public class PersonController {
         check index -5 and -6 if between 61-91 -> coord
         */
         String pnmbrDigits = pnmbr.replaceAll("[^\\d.]", "");
-        if (pnmbrDigits.charAt(-8) >= 2) {
+        if (pnmbrDigits.charAt(pnmbrDigits.length()-8) >= 2) {
             return NumberType.ORG;
         }
-        if (pnmbrDigits.length() == 12 && pnmbrDigits.substring(0, 1) == "16") {
+        if (pnmbrDigits.length() == 12 && pnmbrDigits.substring(0, 2) == "16") {
             return NumberType.ORG;
         }
-        int day = Integer.parseInt(pnmbrDigits.substring(-6, -5));
+        int day = Integer.parseInt(pnmbrDigits.substring(pnmbrDigits.length()-6, pnmbrDigits.length()-4));
         if (day >= 61 && day <= 91) {
             return NumberType.COORD;
         }
