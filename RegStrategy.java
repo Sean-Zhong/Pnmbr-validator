@@ -6,13 +6,10 @@ public class RegStrategy implements ValidationStrategy {
 
     @Override
     public Boolean validate(String pnmbr) {
-        // Validate year
-        String pnmbrDigits = pnmbr.replaceAll("[^\\d.]", "");
-
         if (!isDateValid(pnmbr)) {
             return false;
         }
-
+        return true;
     }
 
     private Boolean isDateValid(String pnmbr) {
