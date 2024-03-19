@@ -1,10 +1,10 @@
 public class LuhnsAlgo {
-    public static Boolean validLuhns(String pnmbr) {
+    public static boolean validLuhns(String pnmbr) {
         int sum = 0;
         boolean alternate = false;
         String pnmbrDigits = pnmbr.replaceAll("[^\\d.]", "");
         String tenDigitPnmbr = pnmbrDigits.substring(pnmbrDigits.length()-10, pnmbrDigits.length());
-        
+
         for (int i = tenDigitPnmbr.length() - 1; i >= 0; i--) {
             int digit = Character.getNumericValue(tenDigitPnmbr.charAt(i));
             if (alternate) {

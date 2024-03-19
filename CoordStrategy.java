@@ -4,7 +4,7 @@ public class CoordStrategy implements ValidationStrategy {
     private static final Logger logger = LoggingUtility.getLogger();
 
     @Override
-    public Boolean validate(String pnmbr) {
+    public boolean validate(String pnmbr) {
         String pnmbrDigits = pnmbr.replaceAll("[^\\d.]", "");
         int digitAdjusted = Character.getNumericValue(pnmbrDigits.charAt(pnmbrDigits.length()-6))-6;
         char charAdjusted = Character.forDigit(digitAdjusted, 10);

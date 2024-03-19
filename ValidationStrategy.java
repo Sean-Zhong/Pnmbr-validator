@@ -1,3 +1,3 @@
 public interface ValidationStrategy {
-    public Boolean validate(String pnmbr);
+    public boolean validate(String pnmbr);
 }
