@@ -20,3 +20,4 @@ for each number in the input list:
 5. Log errors along the way
 
 ## Improvements
+If I had more time I would have liked to package the project in a executable jar file and look into the java package structure more.
