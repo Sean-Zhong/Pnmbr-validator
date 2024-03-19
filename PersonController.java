@@ -41,17 +41,8 @@ public class PersonController {
     }
 
     public static NumberType checkNumberType(String pnmbr) {
-        /*
-        1. Check if org or not org by:
-        check index -8 =< 2 -> org
-        check len
-            if "12" and first two 16 -> org
-
-        2. Check if regular or coord by:
-        check index -5 and -6 if between 61-91 -> coord
-        */
         String pnmbrDigits = pnmbr.replaceAll("[^\\d.]", "");
-        if (pnmbrDigits.charAt(pnmbrDigits.length()-8) >= 2) {
+        if (Character.getNumericValue(pnmbrDigits.charAt(pnmbrDigits.length()-8)) >= 2) {
             return NumberType.ORG;
         }
         if (pnmbrDigits.length() == 12 && pnmbrDigits.substring(0, 2) == "16") {

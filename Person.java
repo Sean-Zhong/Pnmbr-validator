@@ -32,4 +32,9 @@ public class Person {
     public void setValid(Boolean vld) {
         this.valid = vld;
     }
+
+    @Override
+    public String toString() {
+        return pnmbr + "," + type + "," + valid;
+    }
 }
