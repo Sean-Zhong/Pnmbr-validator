@@ -1,4 +1,4 @@
-public class CoordStrategy extends RegStrategy {
+public class CoordStrategy implements ValidationStrategy {
 
     @Override
     public Boolean validate(String pnmbr) {
