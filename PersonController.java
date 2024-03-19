@@ -1,4 +1,8 @@
+import java.util.logging.Logger;
+
 public class PersonController {
+    private static final Logger logger = LoggingUtility.getLogger();
+    
     public static Person controll(String pnmbr) {
         Person person = new Person(null, pnmbr, false);
         if (validInput(pnmbr)) {
@@ -18,7 +22,7 @@ public class PersonController {
                     break;
 
                 default:
-                    // return some error here
+                    logger.warning("No NumberType detected for personal number: " + pnmbr);
                     break;
             }
 
@@ -28,19 +32,20 @@ public class PersonController {
         return person;
     }
     
-    public static Boolean validInput(String pnmbr) {
+    private static Boolean validInput(String pnmbr) {
         String pnmbrDigits = pnmbr.replaceAll("[^\\d.]", "");
         if (pnmbrDigits.length() > 12 || pnmbrDigits.length() < 10) {
+            logger.warning("Invalid length detected in personal number: " + pnmbr);
             return false;
         }
-        // Double check if regex works
         if (pnmbr.matches("[^0-9\\+\\-]")) {
+            logger.warning("Invalid characters found in personal number: " + pnmbr);
             return false;
         }
         return true;
     }
 
-    public static NumberType checkNumberType(String pnmbr) {
+    private static NumberType checkNumberType(String pnmbr) {
         String pnmbrDigits = pnmbr.replaceAll("[^\\d.]", "");
         if (Character.getNumericValue(pnmbrDigits.charAt(pnmbrDigits.length()-8)) >= 2) {
             return NumberType.ORG;

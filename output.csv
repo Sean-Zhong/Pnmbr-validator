@@ -1,4 +1,6 @@
-Personnummer,NummerTyp,Gilitg
+PersonalNumber,NumberType,Valid
+201701102384,REG,true
+301701102384,REG,false
 141206-2380,REG,true
 20080903-2386,REG,true
 7101169295,REG,true

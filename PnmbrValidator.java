@@ -3,8 +3,10 @@ import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.logging.*;
 
 public class PnmbrValidator {
+    private static final Logger logger = LoggingUtility.getLogger();
     public static void main(String[] args) {
         String inputFilePath = "testData.csv";
         String outputFilePath = "output.csv";
@@ -12,11 +14,13 @@ public class PnmbrValidator {
         try (BufferedReader br = new BufferedReader(new FileReader(inputFilePath));
              BufferedWriter bw = new BufferedWriter(new FileWriter(outputFilePath))) {
             
+            LoggingUtility.initializeLogger();
+
             // Skip the header line in the input CSV file
             br.readLine();
 
             // Write the header to the output CSV file
-            bw.write("PersonalNumber,NummerType,Valid");
+            bw.write("PersonalNumber,NumberType,Valid");
             bw.newLine();
 
             String line;
@@ -27,12 +31,18 @@ public class PnmbrValidator {
             }
         } catch (IOException e) {
             // Handle file IO exceptions
-            e.printStackTrace();
+            logger.log(Level.SEVERE, "Error occurred while reading/writing file", e);
         }
     }
 
     private static String processLine(String line) {
-        Person person = PersonController.controll(line);
-        return person.toString();
+        try {
+            Person person = PersonController.controll(line);
+            return person.toString();
+        } catch (Exception e) {
+            // Handle exceptions from PersonController
+            logger.log(Level.SEVERE, "Error occurred while processing line: " + line, e);
+            return ""; // Return empty string or some placeholder for failed lines
+        }
     }
 }

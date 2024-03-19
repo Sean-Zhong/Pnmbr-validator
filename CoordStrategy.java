@@ -1,4 +1,7 @@
+import java.util.logging.Logger;
+
 public class CoordStrategy implements ValidationStrategy {
+    private static final Logger logger = LoggingUtility.getLogger();
 
     @Override
     public Boolean validate(String pnmbr) {
@@ -14,12 +17,13 @@ public class CoordStrategy implements ValidationStrategy {
         }
 
         if (!DateValidator.isDateValid(str.toString())) {
+            logger.warning("Date validation failed for personal number: " + pnmbr);
             return false;
         }
         if (!LuhnsAlgo.validLuhns(pnmbr)) {
+            logger.warning("Luhn's algorithm validation failed for personal number: " + pnmbr);
             return false;
         }
         return true;
     }
-    
 }
