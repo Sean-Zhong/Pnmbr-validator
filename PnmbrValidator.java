@@ -37,7 +37,7 @@ public class PnmbrValidator {
 
     private static String processLine(String line) {
         try {
-            Person person = PersonController.controll(line);
+            Person person = new Person(line);
             return person.toString();
         } catch (Exception e) {
             // Handle exceptions from PersonController
