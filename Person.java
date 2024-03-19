@@ -36,17 +36,25 @@ public class Person {
     }
 
     private static boolean validInput(String pnmbr) {
-        String pnmbrDigits = pnmbr.replaceAll("[^\\d.]", "");
-        if (pnmbrDigits.length() > 12 || pnmbrDigits.length() < 10) {
-            logger.warning("Invalid length detected in personal number: " + pnmbr);
-            return false;
-        }
-        if (pnmbr.matches("[^0-9\\+\\-]")) {
-            logger.warning("Invalid characters found in personal number: " + pnmbr);
+        String twelveDigits = "^\\d{12}$";
+        String twelveDigitsMinus = "^\\d{8}-\\d{4}$";
+        String tenDigits = "^\\d{10}$";
+        String tenDigitsMinus = "^\\d{6}-\\d{4}$";
+        String tenDigitsPlus = "^\\d{6}\\+\\d{4}$";
+
+        if (!(pnmbr.matches(twelveDigits) ||
+              pnmbr.matches(twelveDigitsMinus) ||
+              pnmbr.matches(tenDigits) ||
+              pnmbr.matches(tenDigitsMinus) ||
+              pnmbr.matches(tenDigitsPlus))) {
+            logger.warning("Invalid input format detected for personal number: " + pnmbr);
             return false;
         }
         return true;
     }
+    
+
+
 
     private static NumberType checkNumberType(String pnmbr) {
         String pnmbrDigits = pnmbr.replaceAll("[^\\d.]", "");
