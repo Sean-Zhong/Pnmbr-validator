@@ -2,50 +2,86 @@
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
 <record>
-  <date>2024-03-19T18:57:04.581139Z</date>
-  <millis>1710874624581</millis>
-  <nanos>139000</nanos>
+  <date>2024-03-19T22:27:44.340208Z</date>
+  <millis>1710887264340</millis>
+  <nanos>208000</nanos>
   <sequence>0</sequence>
-  <logger>LoggingUtility</logger>
+  <logger>com.seanzhong.pnmbrvalidator.LoggingUtility</logger>
   <level>WARNING</level>
-  <class>RegStrategy</class>
+  <class>com.seanzhong.pnmbrvalidator.RegStrategy</class>
   <method>validate</method>
   <thread>1</thread>
   <message>Date validation failed for personal number: 301701102384</message>
 </record>
 <record>
-  <date>2024-03-19T18:57:04.595938Z</date>
-  <millis>1710874624595</millis>
-  <nanos>938000</nanos>
+  <date>2024-03-19T22:27:44.353374Z</date>
+  <millis>1710887264353</millis>
+  <nanos>374000</nanos>
   <sequence>1</sequence>
-  <logger>LoggingUtility</logger>
+  <logger>com.seanzhong.pnmbrvalidator.LoggingUtility</logger>
   <level>WARNING</level>
-  <class>RegStrategy</class>
+  <class>com.seanzhong.pnmbrvalidator.Person</class>
+  <method>validInput</method>
+  <thread>1</thread>
+  <message>Invalid input format detected for personal number: 30170102384</message>
+</record>
+<record>
+  <date>2024-03-19T22:27:44.354363Z</date>
+  <millis>1710887264354</millis>
+  <nanos>363000</nanos>
+  <sequence>2</sequence>
+  <logger>com.seanzhong.pnmbrvalidator.LoggingUtility</logger>
+  <level>WARNING</level>
+  <class>com.seanzhong.pnmbrvalidator.Person</class>
+  <method>validInput</method>
+  <thread>1</thread>
+  <message>Invalid input format detected for personal number: 30170110--2384</message>
+</record>
+<record>
+  <date>2024-03-19T22:27:44.354953Z</date>
+  <millis>1710887264354</millis>
+  <nanos>953000</nanos>
+  <sequence>3</sequence>
+  <logger>com.seanzhong.pnmbrvalidator.LoggingUtility</logger>
+  <level>WARNING</level>
+  <class>com.seanzhong.pnmbrvalidator.Person</class>
+  <method>validInput</method>
+  <thread>1</thread>
+  <message>Invalid input format detected for personal number: 30170-110-2384</message>
+</record>
+<record>
+  <date>2024-03-19T22:27:44.357162Z</date>
+  <millis>1710887264357</millis>
+  <nanos>162000</nanos>
+  <sequence>4</sequence>
+  <logger>com.seanzhong.pnmbrvalidator.LoggingUtility</logger>
+  <level>WARNING</level>
+  <class>com.seanzhong.pnmbrvalidator.RegStrategy</class>
   <method>validate</method>
   <thread>1</thread>
   <message>Luhn's algorithm validation failed for personal number: 201701272394</message>
 </record>
 <record>
-  <date>2024-03-19T18:57:04.596802Z</date>
-  <millis>1710874624596</millis>
-  <nanos>802000</nanos>
-  <sequence>2</sequence>
-  <logger>LoggingUtility</logger>
+  <date>2024-03-19T22:27:44.357892Z</date>
+  <millis>1710887264357</millis>
+  <nanos>892000</nanos>
+  <sequence>5</sequence>
+  <logger>com.seanzhong.pnmbrvalidator.LoggingUtility</logger>
   <level>WARNING</level>
-  <class>DateValidator</class>
+  <class>com.seanzhong.pnmbrvalidator.DateValidator</class>
   <method>isDateValid</method>
   <thread>1</thread>
   <message>Exception occured while validating date for personal number: 190302299813</message>
   <param>Invalid date 'February 29' as '1903' is not a leap year</param>
 </record>
 <record>
-  <date>2024-03-19T18:57:04.597259Z</date>
-  <millis>1710874624597</millis>
-  <nanos>259000</nanos>
-  <sequence>3</sequence>
-  <logger>LoggingUtility</logger>
+  <date>2024-03-19T22:27:44.358318Z</date>
+  <millis>1710887264358</millis>
+  <nanos>318000</nanos>
+  <sequence>6</sequence>
+  <logger>com.seanzhong.pnmbrvalidator.LoggingUtility</logger>
   <level>WARNING</level>
-  <class>RegStrategy</class>
+  <class>com.seanzhong.pnmbrvalidator.RegStrategy</class>
   <method>validate</method>
   <thread>1</thread>
   <message>Date validation failed for personal number: 190302299813</message>
