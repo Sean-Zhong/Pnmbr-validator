@@ -5,10 +5,11 @@ Takes a list of Personal numbers from input.csv and returns the types of numbers
 - Java installation - (openjdk 11.0.22 was used for this project)
 
 ## Instructions
-1. Provide a list of personalnumbers to be validated in input.csv (the test data from the pdf is in there by default)
-2. Compile PnmbrValidator.java by entering ```javac com/seanzhong/pnmbrvalidator/PnmbrValidator.java``` in terminal/cmd
-3. Execute PnmbrValidator.java by entering ```java com/seanzhong/pnmbrvalidator/PnmbrValidator.java``` in terminal/cmd
-4. The results will be present in output.csv
+1. Download the code and put it into a directory
+2. Provide a list of personalnumbers to be validated in input.csv (the test data from the pdf is in there by default)
+3. Compile PnmbrValidator.java by entering ```javac com/seanzhong/pnmbrvalidator/PnmbrValidator.java``` in terminal/cmd
+4. Execute PnmbrValidator.java by entering ```java com/seanzhong/pnmbrvalidator/PnmbrValidator.java``` in terminal/cmd
+5. The results will be present in output.csv
 
 ## Thought Process
 I broke down the problem into the following steps,
