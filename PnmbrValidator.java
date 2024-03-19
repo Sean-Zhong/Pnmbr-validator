@@ -8,7 +8,7 @@ import java.util.logging.*;
 public class PnmbrValidator {
     private static final Logger logger = LoggingUtility.getLogger();
     public static void main(String[] args) {
-        String inputFilePath = "testData.csv";
+        String inputFilePath = "input.csv";
         String outputFilePath = "output.csv";
 
         try (BufferedReader br = new BufferedReader(new FileReader(inputFilePath));
